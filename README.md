@@ -28,3 +28,6 @@ Plural nouns are used because RESTful APIs represent collections of resources. U
 Returning 404 Not Found clearly tells the client that the requested resource does not exist. This improves error handling and user experience by providing accurate feedback instead of misleading results like an empty array or unclear error messages.
 
 **4.Testing:**
+
+<img width="382" height="443" alt="Screenshot 2026-01-28 162656" src="https://github.com/user-attachments/assets/ff23a810-f7fe-4811-ad99-1ac3957f7043" />
+
