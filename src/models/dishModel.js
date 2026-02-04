@@ -1,25 +1,23 @@
-const dishes = [
-    {
-        id: 1,
-        name: 'Tacos al Pastor',
-        price: 12.99,
-        category: 'Main Course',
-        isVegetarian: false
+const mongoose = require('mongoose');
+const dishSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        required: true,
+        unique:true,
     },
-    {
-        id: 2,
-        name: 'Enchiladas Verdes',
-        price: 10.99,
-        category: 'Main Course',
-        isVegetarian: true
+    price:{
+        type:Number,
+        required:true,
     },
-    {
-        id: 3,
-        name: 'Churros',
-        price: 5.99,
-        category: 'Dessert',
-        isVegetarian: true
-    }
-];
+    category:{
+        type:String,
+        enum: ['Starters', 'Main', 'Dessert', 'Drinks'],
+        required: true,
+    },
+    isVegetarian:{
+        type:Boolean,
+        default:false,
+    },
+});
 
-module.exports = dishes;
+module.exports = mongoose.model('Dish', dishSchema);

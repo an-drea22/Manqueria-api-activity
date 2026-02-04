@@ -25,6 +25,6 @@ Plural nouns are used because RESTful APIs represent collections of resources. U
  -Why is it important to return 404 instead of just an empty array or a generic error?
 
  -Answer:
-Returning 404 Not Found clearly tells the client that the requested resource does not exist. This improves error handling and user experience by providing accurate feedback instead of misleading results like an empty array or unclear error messages.
+Returning 404 Not Found clearly tells the client that the requested resource does not exist. 
 
 **4.Testing:**
