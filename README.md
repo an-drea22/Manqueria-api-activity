@@ -33,3 +33,13 @@ Returning 404 Not Found clearly tells the client that the requested resource doe
 
 <img width="358" height="565" alt="Screenshot 2026-01-28 164540" src="https://github.com/user-attachments/assets/bac00133-cdfc-4be9-867c-0319f7e2b53f" />
 
+**"Why did I choose to Embed the [Review/Tag/Log]?"**
+- I chose to embed the reviews inside the Dish model because reviews belong strictly to a specific dish. A review does not need to exist independently from the dish it describes. When users view a dish, they usually want to see its reviews together with it.
+
+Embedding makes retrieval faster because all related data (dish details + reviews) can be fetched in a single query. It also keeps the database organized by grouping related information inside one document.
+
+**"Why did I choose to Reference the [Chef/User/Guest]?"**
+-- I chose to reference the Chef because a chef exists independently from any single dish. One chef can cook multiple dishes, and those dishes can all point to the same chef.
+
+Referencing prevents data duplication. Instead of copying the chef’s information into every dish document, I only store the Chef’s ObjectId. This keeps the database cleaner, more scalable, and easier to maintain. If the chef’s information changes, it only needs to be updated in one place.
+

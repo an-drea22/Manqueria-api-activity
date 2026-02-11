@@ -7,6 +7,7 @@ const {
     getDishById,
     updateDish,
     deleteDish,
+    postchef,
 } = require('../controllers/dishController');
 
 router.get('/dishes', getAllDishes);
@@ -14,5 +15,7 @@ router.post('/dishes', createDish);
 router.get('/dishes/:id', getDishById);
 router.put('/dishes/:id', updateDish);
 router.delete('/dishes/:id', deleteDish);
+router.post('/chefs', postchef);
+
 
 module.exports = router;
