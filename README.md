@@ -56,21 +56,17 @@
 code?"**
 
 o Answer:
-
-    Authentication is the process of verifying the identity of a user. In this activity, it happens when the user logs in using an email and password. If the credentials are correct, a JWT token is generated which shows that the user is authenticated.
-
-    Authorization is the process of checking what the authenticated user is allowed to do. In this activity, it is handled by the authorize middleware, which checks the user’s role (such as admin or manager) and determines whether they are allowed to access certain routes.
+Authentication is the process of verifying the identity of a user. In this activity, it happens when the user logs in using an email and password. If the credentials are correct, a JWT token is generated which shows that the user is authenticated.
+Authorization is the process of checking what the authenticated user is allowed to do. In this activity, it is handled by the authorize middleware, which checks the user’s role (such as admin or manager) and determines whether they are allowed to access certain routes.
 
 **"Why did we use bcryptjs instead of saving passwords as plain text in
 MongoDB?"**
 
 o Answer:
-
-    We use bcryptjs to hash passwords before saving them in the database. Hashing converts the password into an encrypted form that cannot easily be reversed. This improves security because even if the database is compromised, attackers cannot see the original passwords. When a user logs in, bcrypt compares the entered password with the hashed password stored in the database.
+We use bcryptjs to hash passwords before saving them in the database. Hashing converts the password into an encrypted form that cannot easily be reversed. This improves security because even if the database is compromised, attackers cannot see the original passwords. When a user logs in, bcrypt compares the entered password with the hashed password stored in the database.
 
 **"What does the protect middleware do when it receives a JWT from the
 client?"**
 
 o Answer:
-
-    The protect middleware checks if the request contains a valid JWT token in the Authorization header. It extracts the token, verifies it using the secret key, and decodes the user information stored inside the token. If the token is valid, the middleware retrieves the user from the database and attaches it to the request object so the next route can use it. If the token is missing or invalid, the middleware blocks the request and returns a 401 Unauthorized error.
+The protect middleware checks if the request contains a valid JWT token in the Authorization header. It extracts the token, verifies it using the secret key, and decodes the user information stored inside the token. If the token is valid, the middleware retrieves the user from the database and attaches it to the request object so the next route can use it. If the token is missing or invalid, the middleware blocks the request and returns a 401 Unauthorized error.
