@@ -1,7 +1,7 @@
 const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 
-// Helper function to generate JWT
+
 const generateToken = (id, role) => {
   return jwt.sign(
     { id, role },
@@ -10,20 +10,20 @@ const generateToken = (id, role) => {
   );
 };
 
-// Register a new user
+
 exports.registerUser = async (req, res) => {
   try {
 
     const { name, email, password, role } = req.body;
 
-    // Check if user exists
+    
     const userExists = await User.findOne({ email });
 
     if (userExists) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Create new user
+    
     const user = await User.create({
       name,
       email,

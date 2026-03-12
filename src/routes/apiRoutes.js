@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const authRoutes = require('./authRoutes'); // ADD THIS
+const authRoutes = require('./authRoutes'); 
 
 const chefController = require('../controllers/chefController');
 const { protect, authorize } = require('../middleware/authMiddleware');
 
-router.use('/auth', authRoutes); // ADD THIS
+router.use('/auth', authRoutes); 
 
 router.get('/auth/chefs', chefController.getAllChefs);
 router.post('/auth/chefs', chefController.createChef);
