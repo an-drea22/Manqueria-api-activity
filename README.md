@@ -43,6 +43,15 @@
 
     Referencing prevents data duplication. Instead of copying the chef’s information into every dish document, I only store the Chef’s ObjectId. This keeps the database cleaner, more scalable, and easier to maintain. If the chef’s information changes, it only needs to be updated in one place.
 
+
+**Submission Checklist & README.md**
+
+1. [/] Code runs via npm run dev with no errors.
+2. [/] Registration and Login endpoints are functional.
+3. [/] Middleware correctly blocks unauthorized users.
+4. [/] GitHub Repo link submitted.
+5. [/] README.md updated with the following answers:
+
 **"What is the difference between Authentication and Authorization in our
 code?"**
 
